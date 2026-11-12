@@ -80,7 +80,8 @@ modelo de datos pero todavía no tiene permisos especiales asignados.
 
 - **Root Directory:** `front_end`, Framework Preset: *Other*, sin build command.
 - En `front_end/vercel.json` reemplaza `https://TU-BACKEND.onrender.com`
-  por la URL real del servicio de Render.
+  por la URL real del servicio de Render (actualmente
+  `https://biblioteca-ef29.onrender.com`).
 - El frontend llama a `/api/...`, que Vercel reenvía al backend. Así la
   cookie de sesión queda en el mismo dominio que el frontend. En local
   (`localhost`/`127.0.0.1`) `Script/config.js` usa `http://localhost:3000`.
