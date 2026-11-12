@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+
+.navbar {
+    background-color: white; 
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1e2b4d;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.navbar .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.btn-volver {
+    background-color: #1e2b4d;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1.5px solid white;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-volver:hover {
+    background-color: white;
+    color: #1e2b4d;
+}
+
+/* --- CONTENEDOR CENTRAL --- */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: calc(100vh - 70px);
+}
+
+/* --- TARJETA DEL LIBRO --- */
+.libro-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    max-width: 950px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Columna de la Imagen */
+.libro-imagen-container {
+    flex: 0 0 40%;
+    background-color: #ecf0f1; /* Fondo gris muy suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.libro-imagen-container img {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 6px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    object-fit: cover;
+}
+
+/* Columna de la Información */
+.libro-info {
+    flex: 1;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.categoria-badge {
+    background-color: #3498db;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+#tituloLibro {
+    font-size: 2.2rem;
+    color: #1e293b;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.autor {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.descripcion-container {
+    margin-bottom: 35px;
+}
+
+.descripcion-container h4 {
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#descripcionLibro {
+    color: #555;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+/* Botón Principal */
+.btn-principal {
+    padding: 14px 28px;
+    background-color: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.05rem;
+    transition: background 0.2s, transform 0.1s;
+    text-align: center;
+    align-self: flex-start;
+}
+
+.btn-principal:hover {
+    background-color: #1e40af;
+}
+
+.btn-principal:active {
+    transform: scale(0.98);
+}
+
+/* --- RESPONSIVO (Móviles y Tablets) --- */
+@media (max-width: 768px) {
+    .libro-card {
+        flex-direction: column;
+    }
+    .libro-imagen-container {
+        padding: 30px;
+    }
+    .libro-info {
+        padding: 30px 25px;
+    }
+    #tituloLibro {
+        font-size: 1.8rem;
+    }
+}

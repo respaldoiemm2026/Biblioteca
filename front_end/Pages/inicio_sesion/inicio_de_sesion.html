@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="./estilosinicio.css">
+</head>
+<body>
+    <header class="encabezado">
+        <a href="../registrarse/registrarse.html">
+            <button class="boton" type="button">Registrarse</button>
+        </a>
+    </header>
+    <div class="caja_inicio_de_sesion">
+        <h1 class="titulo">Iniciar Sesión</h1>
+        <br>
+        <div class="logo">
+            <img src="../../public/logo_colegio.png" alt="Logo IE Maria Montessori">
+        </div>
+        <br>
+
+        <!-- Formulario contenedor -->
+        <form id="formLogin">
+            <input id="correo" class="caja_texto" type="email" placeholder="correo" required>
+            <br><br>
+            <input id="contrasena" class="caja_texto" type="password" placeholder="contraseña" required> 
+            <br><br>
+            <button id="btnContinuar" class="boton" type="submit">Continuar</button>
+        </form>
+    </div>
+    
+</body>
+<script src="../../Script/config.js"></script>
+<script src="../../Script/iniciosesion.js"></script>
+</html>

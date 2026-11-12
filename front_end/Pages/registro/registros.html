@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios - Biblioteca</title>
+    <link rel="stylesheet" href="registros.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- BARRA LATERAL -->
+    <aside class="sidebar">
+        <h2>📚 Biblioteca</h2>
+        <div class="menu-item active">👤 Usuarios</div>
+        <a href="../anadir_libro/anadir_libro.html" class="link-menu"><button class="menu-item">📖 Libros</button></a>
+        <a href="../categorias/categoria.html" class="link-menu"><button class="menu-item">🏷️ Categorías</button></a>
+        <a href="../detalleprestamo/detalleprestamo.html" class="link-menu"><button class="menu-item">📋 Préstamos</button></a>
+        <a href="../informes/informes.html" class="link-menu"><button class="menu-item">📊 Informes</button></a>
+        <a href="../editoriales/editoriales.html" class="link-menu">
+        <button class="menu-item">🏢 Editoriales</button>
+        </a>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="content">
+        <div class="header">
+            <div>
+                <h1>Usuarios</h1>
+                <p>Administra los usuarios registrados</p>
+            </div>
+            <div class="header-acciones">
+                <a href="../home/pagina2.html" class="link-menu"><button class="boton-inicio">Inicio</button></a>
+                <button id="btnSalir" class="boton-cerrar">Cerrar Sesión</button>
+            </div>
+        </div>
+
+        <!-- BUSCADOR -->
+        <div class="buscador-container">
+            <input type="text" id="inputBuscarUsuario" placeholder="Buscar Usuario por nombre, correo o curso..." class="input-buscar">
+        </div>
+
+        <!-- TABLA DE USUARIOS -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Curso</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaUsuariosBody">
+                    <!-- Dinámico con JS -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+
+
+
+</body>
+<script src="../../Script/config.js"></script>
+<script src="../../Script/registros.js"></script>
+<script src="../../Script/logout.js"></script>
+</html>

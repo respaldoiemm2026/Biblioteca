@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Préstamos</title>
+    <link rel="stylesheet" href="../detalleprestamo/detalleprestamo.css">
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar">
+        <h2>📚 Biblioteca</h2>
+        <a href="../registro/registros.html" class="link-menu">
+            <button class="menu-item">👤 Usuarios</button>
+        </a>
+        <a href="../anadir_libro/anadir_libro.html" class="link-menu">
+            <button class="menu-item">📖 Libros</button>
+        </a>
+        <a href="../categorias/categoria.html" class="link-menu">
+            <button class="menu-item">🏷️ Categorías</button>
+        </a>
+        
+        <div class="menu-item active">
+            📋 Préstamos
+        </div>
+
+        <a href="../informes/informes.html" class="link-menu">
+            <button class="menu-item">📊 Informes</button>
+        </a>
+
+        <a href="../editoriales/editoriales.html" class="link-menu">
+            <button class="menu-item">🏢 Editoriales</button>
+        </a>
+    </aside>
+
+    <main class="content">
+        <div class="header">
+            <div>
+                <h1>Solicitudes de Préstamo</h1>
+                <p>Aprueba o rechaza los libros solicitados por los estudiantes (Plazo de 7 días)</p>
+            </div>
+            <div class="header-acciones">
+                <a href="../home/pagina2.html" class="link-menu"><button class="boton">Inicio</button></a>
+                <button id="btnSalir" class="boton boton-peligro">Cerrar Sesión</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Estudiante</th>
+                        <th>Libro Solicitado</th>
+                        <th>Fecha Solicitud</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTablaPrestamos">
+                    <!-- El JavaScript llenará esta tabla dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+</body>
+   <script src="../../Script/config.js"></script>
+<script src="../../Script/logout.js"></script>
+<script src="../../Script/detalleprestamo.js"></script>
+</html>

@@ -1,0 +1,122 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Roles {
+  id       Int       @id @default(autoincrement())
+  rol      String?   @db.VarChar(16)
+
+  usuarios Usuario[]
+
+  @@map("roles")
+}
+
+model Autor {
+  id           Int      @id @default(autoincrement())
+  nombreAutor  String?  @map("nombre_autor") @db.VarChar(20)
+
+  libros       Libro[]
+
+  @@map("autor")
+}
+
+model Editorial {
+  id                Int      @id @default(autoincrement())
+  nombreEditorial   String?  @map("nombre_editorial") @db.VarChar(100)
+
+  libros            Libro[]
+
+  @@map("editoriales")
+}
+
+model Usuario {
+  id         Int      @id @default(autoincrement())
+  nombre     String?  @db.VarChar(20)
+  contrasena String?  @map("contraseña") @db.VarChar(100)
+  correo     String?  @unique @db.VarChar(100)
+  token      String?  @db.VarChar(512)
+  curso      String?  
+
+  idRol      Int?     @map("id_rol")
+  rol        Roles?    @relation(fields: [idRol], references: [id])
+
+  detallesPrestamo DetallePrestamo[]
+
+  @@map("usuarios")
+}
+
+model Libro {
+  id           Int      @id @default(autoincrement())
+  titulo       String?  @db.VarChar(50)
+  ISBN         String?
+  descripcion  String?  @db.Text
+  imagen       String?
+  tipo         String?  @db.VarChar(50)
+
+  idAutor      Int?     @map("id_autor")
+  idEditorial  Int?     @map("id_editorial")
+
+  autor        Autor?      @relation(fields: [idAutor], references: [id])
+  editorial    Editorial?  @relation(fields: [idEditorial], references: [id])
+
+  categorias       LibroCategoria[]
+  detallesPrestamo DetallePrestamo[]
+
+  @@map("libro")
+}
+
+model Prestamo {
+  id             Int       @id @default(autoincrement())
+  fechaPrestamo  DateTime? @map("fecha_prestamo") @db.Date
+  fechaRegreso   DateTime? @map("fecha_regreso") @db.Date
+  estado         String    @default("Pendiente") // <--- NUEVA COLUMNA AÑADIDA
+
+  detallesPrestamo DetallePrestamo[]
+
+  @@map("prestamo")
+}
+
+model Categoria {
+  id               Int      @id @default(autoincrement())
+  nombreCategoria  String?  @map("nombre_categoria") @db.VarChar(50)
+  cantidadLibros   Int?     @map("cantidad_libros")
+
+  libros           LibroCategoria[]
+
+  @@map("categoria")
+}
+
+model LibroCategoria {
+  idLibro      Int @map("id_libro")
+  idCategoria  Int @map("id_categoria")
+
+  libro        Libro     @relation(fields: [idLibro], references: [id])
+  categoria    Categoria @relation(fields: [idCategoria], references: [id])
+
+  @@id([idLibro, idCategoria])
+
+  @@map("libro_categoria")
+}
+
+model DetallePrestamo {
+  id          Int @id @default(autoincrement())
+
+  idUsuario   Int @map("id_usuario")
+  idPrestamo  Int @map("id_prestamo")
+  idLibro     Int @map("id_libro")
+
+  usuario     Usuario @relation(fields: [idUsuario], references: [id])
+  prestamo    Prestamo @relation(fields: [idPrestamo], references: [id])
+  libro       Libro @relation(fields: [idLibro], references: [id])
+
+  @@map("detalle_prestamo")
+}

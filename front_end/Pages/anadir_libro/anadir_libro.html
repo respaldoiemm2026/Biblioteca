@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Libros</title>
+    <link rel="stylesheet" href="./anadir_libro.css">
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar">
+        <h2>📚 Biblioteca</h2>
+        <a href="../registro/registros.html" class="link-menu">
+            <button class="menu-item">👤 Usuarios</button>
+        </a>
+        <div class="menu-item active">
+            📖 Libros
+        </div>
+
+        <a href="../categorias/categoria.html" class="link-menu">
+            <button class="menu-item">🏷️ Categorías</button>
+        </a>
+        
+        <a href="../detalleprestamo/detalleprestamo.html" class="link-menu">
+            <button class="menu-item"> 📋 Préstamos</button>
+        </a>
+
+        <a href="../informes/informes.html" class="link-menu">
+            <button class="menu-item">📊 Informes</button>
+        </a>
+
+        <a href="../editoriales/editoriales.html" class="link-menu">
+        <button class="menu-item">🏢 Editoriales</button>
+        </a>
+    </aside>
+
+    <main class="content">
+        <div class="header">
+            <div>
+                <h1>Libros</h1>
+                <p>Administra los libros registrados</p>
+            </div>
+            
+            <div class="header-acciones">
+                <a href="../home/pagina2.html" class="link-menu"><button class="boton">Inicio</button></a>
+                <button id="btnSalir" class="boton boton-peligro">Cerrar Sesión</button>
+                <button id="btnAbrirModalNuevo" class="btn-add">+ Nuevo Libro</button>
+            </div>
+        </div>
+
+        <div class="top-controls">
+            <input type="text" id="inputBuscar" placeholder="Buscar Libro o Autor...">
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ISBN</th>
+                        <th>Nombre</th>
+                        <th>Autor</th>
+                        <th>Editorial</th> <!-- NUEVA COLUMNA AÑADIDA AQUÍ -->
+                        <th>Categoría</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+                    <!-- JS llenará esta tabla -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+<!-- VENTANA EMERGENTE (MODAL) PARA AÑADIR LIBRO -->
+<div id="ventanaModal" class="modal-oculto">
+    <div class="modal-contenido">
+        <span id="btnCerrarModal" class="cerrar-modal">&times;</span>
+        <h2 id="tituloModal" class="modal-titulo">Añadir Nuevo Libro</h2>
+        
+    <form id="formularioLibro">
+        <input type="text" id="campoTitulo" class="input-form" placeholder="Título del libro" required>
+        <input type="text" id="campoIsbn" class="input-form" placeholder="ISBN" required>
+        
+        <div class="form-fila">
+            <input type="number" id="campoAutor" class="input-form input-mitad" placeholder="ID del Autor" required>
+            <input type="number" id="campoEditorial" class="input-form input-mitad" placeholder="ID de Editorial" required>
+        </div>
+        
+        <input type="text" id="campoTipo" class="input-form" placeholder="Categoría (Ej. Fantasía, Terror)" required>
+        
+        <input type="url" id="campoImagen" class="input-form" placeholder="URL de la portada (Opcional)">
+        <textarea id="campoDescripcion" class="input-form area-form" rows="3" placeholder="Descripción del libro... (Opcional)"></textarea>
+        
+        <button type="submit" id="btnGuardarFormulario" class="btn-add btn-block">Guardar Libro</button>
+    </form>
+    </div>
+</div>
+
+</body>
+<script src="../../Script/config.js"></script>
+<script src="../../Script/anadir_libro.js"></script>
+<script src="../../Script/logout.js"></script>
+</html>

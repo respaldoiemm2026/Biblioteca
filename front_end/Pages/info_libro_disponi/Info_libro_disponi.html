@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Libro - Biblioteca</title>
+    <link rel="stylesheet" href="info_libro_style.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">📚 Mi Biblioteca</div>
+        <a href="../tipo_libro/tipolibro.html" class="btn-volver">Volver al Inicio</a>
+    </div>
+
+    <div class="container">
+        <div class="libro-card">
+            
+            <div class="libro-imagen-container">
+                <img id="imagenLibro" src="" alt="Portada del libro">
+            </div>
+            
+            <div class="libro-info">
+                <span id="categoriaLibro" class="categoria-badge">Cargando...</span>
+                <h1 id="tituloLibro">Cargando título...</h1>
+                <h3 class="autor">Autor: <span id="autorLibro">Cargando autor...</span></h3>
+                
+                <div class="descripcion-container">
+                    <h4>Sinopsis:</h4>
+                    <p id="descripcionLibro">Cargando descripción del libro...</p>
+                </div>
+                
+                <button id="btnSolicitarLibro" class="btn-principal">Cargando...</button>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+<script src="../../Script/config.js"></script>
+<script src="../../Script/info_libro_disponi.js"></script>
+</html>

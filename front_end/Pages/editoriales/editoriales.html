@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Editoriales</title>
+    <link rel="stylesheet" href="./editoriales.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- BARRA LATERAL DE NAVEGACIÓN -->
+    <aside class="sidebar">
+        <h2>📚 Biblioteca</h2>
+        <a href="../registro/registros.html" class="link-menu">
+            <button class="menu-item">👤 Usuarios</button>
+        </a>
+        <a href="../anadir_libro/anadir_libro.html" class="link-menu">
+            <button class="menu-item">📖 Libros</button>
+        </a>
+        <a href="../categorias/categoria.html" class="link-menu">
+            <button class="menu-item">🏷️ Categorías</button>
+        </a>
+
+        <a href="../detalleprestamo/detalleprestamo.html" class="link-menu">
+            <button class="menu-item">📋 Préstamos</button>
+        </a>
+        
+        <a href="../informes/informes.html" class="link-menu">
+            <button class="menu-item">📊 Informes</button>
+        </a>
+
+        <div class="menu-item active">
+            🏢 Editoriales
+        </div>
+
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="content">
+        <div class="header">
+            <div>
+                <h1>Editoriales</h1>
+                <p>Administra las casas editoriales de los libros</p>
+            </div>
+            
+            <div class="header-acciones">
+                <a href="../home/pagina2.html" class="link-menu"><button class="boton">Inicio</button></a>
+                <button id="btnSalir" class="boton boton-peligro">Cerrar Sesión</button>
+                <button id="btnAbrirModalNuevo" class="btn-add">+ Nueva Editorial</button>
+            </div>
+        </div>
+
+        <div class="top-controls">
+            <input type="text" id="inputBuscar" placeholder="Buscar Editorial...">
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre de la Editorial</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+                    <!-- JavaScript llenará esta tabla -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+<!-- VENTANA EMERGENTE (MODAL) PARA CREAR Y EDITAR -->
+<div id="ventanaModal" class="modal-oculto">
+    <div class="modal-contenido">
+        <span id="btnCerrarModal" class="cerrar-modal">&times;</span>
+        <h2 id="tituloModal" class="modal-titulo">Añadir Nueva Editorial</h2>
+        
+        <form id="formularioEditorial">
+            <input type="text" id="campoNombre" class="input-form" placeholder="Nombre de la Editorial" required>
+            <button type="submit" id="btnGuardarFormulario" class="btn-add btn-block">Guardar Editorial</button>
+        </form>
+    </div>
+</div>
+</body>
+<script src="../../Script/config.js"></script>
+<script src="../../Script/editoriales.js"></script>
+<script src="../../Script/logout.js"></script>
+</html>

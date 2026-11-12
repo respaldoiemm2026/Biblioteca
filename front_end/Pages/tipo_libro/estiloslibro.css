@@ -1,0 +1,179 @@
+/* ==========================================
+   RESETEO BÁSICO Y VARIABLES
+========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7fb; /* Fondo gris muy clarito para resaltar las tarjetas blancas */
+    color: #333;
+}
+
+.caja_principal {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================
+   BARRA DE NAVEGACIÓN (HEADER)
+========================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 5%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #000;
+}
+
+.buscador input {
+    width: 350px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.buscador input:focus {
+    border-color: #2c4a85; /* Azul institucional */
+}
+
+/* ==========================================
+   BOTONES GENERALES
+========================================== */
+.boton {
+    background-color: #2c4a85;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.boton:hover {
+    background-color: #1e3563;
+}
+
+.boton:active {
+    transform: scale(0.97);
+}
+
+/* ==========================================
+   ÁREA DE TÍTULO PRINCIPAL (MAIN)
+========================================== */
+main {
+    padding: 40px 5%;
+    flex-grow: 1;
+}
+
+.title-area {
+    margin-bottom: 30px;
+}
+
+.title-area h1 {
+    color: #1e2b4d;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.title-area p {
+    color: #777;
+    font-size: 16px;
+}
+
+/* ==========================================
+   GRID DE TARJETAS (CARDS) Y ANIMACIONES
+========================================== */
+.books {
+    display: grid;
+    /* Esto adapta la cantidad de columnas dependiendo del tamaño de la pantalla */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    position: relative;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+    cursor: pointer;
+    /* Transición suave para cuando entra y sale el cursor */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* EFECTO HOVER: La tarjeta "flota" */
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1); 
+}
+
+.tag {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background-color: #2c4a85;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.book-cover {
+    height: 250px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden; /* Vital: Corta los bordes de la imagen si se hace grande */
+    background-color: #f0f0f0; 
+}
+
+.imagenes {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Transición suave para el zoom */
+    transition: transform 0.5s ease;
+}
+
+/* EFECTO HOVER: La imagen hace zoom sutilmente */
+.card:hover .imagenes {
+    transform: scale(1.08); 
+}
+
+.card h3 {
+    color: #1e2b4d;
+    font-size: 18px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Añade "..." si el texto es muy largo */
+}
+
+.card p {
+    color: #777;
+    font-size: 14px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="./registrarse.css">
+</head>
+<body>
+    <header class="encabezado">
+        <a href="../inicio_sesion/inicio_de_sesion.html">
+            <button class="boton" type="button">Inicio Sesión</button>
+        </a>
+    </header>
+
+    <div class="caja_inicio_de_sesion">
+        <h1 class="titulo">Registrarse</h1>
+        
+        <div class="logo">
+            <img src="../../public/logo_colegio.png" alt="Logo IE Maria Montessori">
+        </div>
+
+        <form id="formRegistro">
+            <input id="correo" class="caja_texto" type="email" placeholder="Correo electrónico" required>
+            <br><br>
+            <input id="contrasena" class="caja_texto" type="password" placeholder="Contraseña" required> 
+            <br><br>
+            <input id="nombre" class="caja_texto" type="text" placeholder="Nombre completo" required>
+            <br><br>
+            <!-- NUEVO CAMPO DE CURSO -->
+            <input id="curso" class="caja_texto" type="text" placeholder="Curso (Ej: 10-2, 11-1)" required>
+            <br><br>
+            <button id="btnContinuar" class="boton" type="submit">Continuar</button>
+        </form>
+    </div>
+     
+</body>
+<script src="../../Script/config.js"></script>
+<script src="../../Script/registrarse.js"></script>
+</html>

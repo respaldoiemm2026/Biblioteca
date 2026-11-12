@@ -1,0 +1,251 @@
+/* --- ESTILOS GENERALES Y LAYOUT --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+.sidebar {
+    width: 260px;
+    background-color: #1e2b4d;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ecf0f1;
+}
+
+.link-menu {
+    text-decoration: none;
+}
+
+.menu-item {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: transparent;
+    border: none;
+    color: #bdc3c7;
+    text-align: left;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+    background-color: #34495e;
+    color: white;
+}
+
+.menu-item.active {
+    background-color: #1e2b4d;
+    color: white;
+    font-weight: bold;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+/* --- CABECERA (IGUAL A CATEGORÍAS) --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 0 0 25px 0;
+    box-shadow: none;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.header p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+.header-acciones {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* --- BOTONES DE LA CABECERA --- */
+.header-acciones .boton,
+.header-acciones .link-menu .boton,
+.boton {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+/* Botón Inicio (Azul oscuro) */
+.header-acciones .link-menu .boton,
+.header-acciones .boton:not(.boton-peligro),
+.boton:not(.boton-peligro) {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+.header-acciones .link-menu .boton:hover,
+.header-acciones .boton:not(.boton-peligro):hover,
+.boton:not(.boton-peligro):hover {
+    background-color: #1e40af;
+}
+
+/* Botón Cerrar Sesión (Rojo) */
+.boton-peligro {
+    background-color: #dc2626;
+    color: white;
+}
+
+.boton-peligro:hover {
+    background-color: #b91c1c;
+}
+
+/* --- TABLA Y CONTENEDOR --- */
+.table-container {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+}
+
+/* Barra superior de la tabla en azul oscuro */
+thead tr {
+    background-color: #1e2b4d;
+    color: white;
+}
+
+th {
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: left;
+    color: white;
+    border-bottom: none;
+}
+
+/* Redondear las esquinas de los extremos de la barra de la tabla */
+th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+th:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Filas de datos de la tabla */
+tbody tr {
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+td {
+    padding: 16px 20px;
+    color: #334155;
+    border-bottom: none;
+}
+
+/* --- INSIGNIAS DE ESTADO (BADGES) --- */
+#cuerpoTablaPrestamos .badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+#cuerpoTablaPrestamos .badge-pendiente {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+#cuerpoTablaPrestamos .badge-aprobado {
+    background-color: #d1fae5;
+    color: #059669;
+}
+
+#cuerpoTablaPrestamos .badge-rechazado {
+    background-color: #fee2e2;
+    color: #dc2626;
+}
+
+/* --- BOTONES DE ACCIÓN (APROBAR / RECHAZAR) --- */
+#cuerpoTablaPrestamos .btn-aprobar {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 5px;
+    transition: background 0.2s;
+}
+
+#cuerpoTablaPrestamos .btn-aprobar:hover {
+    background-color: #27ae60;
+}
+
+#cuerpoTablaPrestamos .btn-rechazar {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+#cuerpoTablaPrestamos .btn-rechazar:hover {
+    background-color: #c0392b;
+}

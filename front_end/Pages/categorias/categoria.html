@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Categorías</title>
+    <link rel="stylesheet" href="./categoria.css">
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar">
+        <h2>📚 Biblioteca</h2>
+        <a href="../registro/registros.html" class="link-menu">
+            <button class="menu-item">👤 Usuarios</button>
+        </a>
+
+        <a href="../anadir_libro/anadir_libro.html" class="link-menu">
+            <button class="menu-item">📖 Libros</button>
+        </a>
+
+        <div class="menu-item active">
+            🏷️ Categorías
+        </div>
+
+        <a href="../detalleprestamo/detalleprestamo.html" class="link-menu">
+            <button class="menu-item">📋 Préstamos</button>
+        </a>
+
+        <a href="../informes/informes.html" class="link-menu">
+            <button class="menu-item">📊 Informes</button>
+        </a>   
+        
+        <a href="../editoriales/editoriales.html" class="link-menu">
+        <button class="menu-item">🏢 Editoriales</button>
+        </a>
+
+    </aside>
+
+    <main class="content">
+        <div class="header">
+            <div>
+                <h1>Categorías</h1>
+                <p>Administra los géneros literarios del sistema</p>
+            </div>
+            <div class="header-acciones">
+                <a href="../home/pagina2.html" class="link-menu"><button class="boton">Inicio</button></a>
+                <button id="btnSalir" class="boton boton-peligro">Cerrar Sesión</button>
+                <button id="btnAbrirModalNuevo" class="btn-add">+ Nueva Categoría</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre de la Categoría</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTablaCategorias">
+                    <!-- JS llenará esta tabla -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+
+<!-- VENTANA EMERGENTE (MODAL) PARA CREAR O EDITAR CATEGORÍA -->
+<div id="ventanaModal" class="modal-oculto">
+    <div class="modal-contenido">
+        <span id="btnCerrarModal" class="cerrar-modal">&times;</span>
+        <h2 id="tituloModal" class="modal-titulo">Añadir Categoría</h2>
+        
+        <form id="formularioCategoria">
+            <input type="text" id="campoNombre" class="input-form" placeholder="Ej. Fantasía, Terror, Romance..." required>
+            
+            <button type="submit" id="btnGuardarFormulario" class="btn-add btn-block">Guardar Categoría</button>
+        </form>
+    </div>
+</div>
+
+</body>
+<script src="../../Script/config.js"></script>
+<script src="../../Script/categoria.js"></script>
+<script src="../../Script/logout.js"></script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar Informes - Biblioteca</title>
+    <link rel="stylesheet" href="informes.css">
+    <!-- Librerías externas para la generación del PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar">
+        <h2>📚 Biblioteca</h2>
+        <a href="../registro/registros.html" class="link-menu">
+            <button class="menu-item">👤 Usuarios</button>
+        </a>
+        <a href="../anadir_libro/anadir_libro.html" class="link-menu">
+            <button class="menu-item">📖 Libros</button>
+        </a>
+        <a href="../categorias/categoria.html" class="link-menu">
+            <button class="menu-item">🏷️ Categorías</button>
+        </a>
+        <a href="../detalleprestamo/detalleprestamo.html" class="link-menu">
+            <button class="menu-item">📋 Préstamos</button>
+        </a>
+        <div class="menu-item active">
+            📊 Informes
+        </div>
+
+        <a href="../editoriales/editoriales.html" class="link-menu">
+            <button class="menu-item">🏢 Editoriales</button>
+        </a>
+    </aside>
+
+    <main class="content">
+        <div class="header">
+            <div>
+                <h1>Generador de Informes</h1>
+                <p>Descarga un catálogo en PDF de todos los libros o fíltralo por categoría.</p>
+            </div>
+            <div class="header-acciones">
+                <a href="../home/pagina2.html" class="link-menu"><button class="boton">Inicio</button></a>
+            </div>
+        </div>
+
+        <div class="informe-panel">
+            <h3>Configurar Informe PDF</h3>
+            <p class="informe-descripcion">Escribe la categoría que deseas buscar. Si lo dejas vacío, se imprimirán todos los libros.</p>
+            
+            <div class="informe-controles">
+                <input type="text" id="inputBuscarCategoria" placeholder="Ej: General, Ficción, Cuento..." class="input-form" style="flex: 1;">
+                <button id="btnGenerarPDF" class="boton btn-pdf">📄 Descargar PDF</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+</body>
+<script src="../../Script/config.js"></script>
+<script src="../../Script/informes.js"></script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Libros</title>
+    <link rel="stylesheet" href="./estiloslibro.css">
+</head>
+<body>
+
+<div class="caja_principal">
+
+    <!-- Barra de navegación Superior -->
+    <header class="navbar">
+          
+        <div class="logo">
+            Institución Educativa Maria Montessori
+        </div>
+
+        <div class="buscador">
+            <!-- El input con el ID exacto que usa el buscador en JS -->
+            <input type="text" id="inputBuscarLibroCards" placeholder="¿Qué libros o autores buscas?">
+        </div>
+
+        <button id="btnSalir" class="boton">Cerrar sesión</button>
+        
+        <nav>
+            <a href="../home/pagina2.html"><button class="boton">Inicio</button></a>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+
+        <div class="title-area">
+            <h1>Biblioteca de I.E.M.M</h1>
+            <p>Acá puedes buscar los libros que hay en la biblioteca.</p>
+        </div>
+
+        <!-- Contenedor de Tarjetas (Cards) -->
+        <!-- Este ID es fundamental para que JS sepa dónde dibujar los libros -->
+        <section class="books" id="contenedorLibrosCards">
+            
+            <!-- El interior está vacío porque el archivo tipo_de_libro.js se encargará 
+                 de traer los libros de la base de datos y dibujarlos aquí con sus animaciones -->
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+<script src="../../Script/config.js"></script>
+<script src="../../Script/tipo_libro.js"></script>
+<script src="../../Script/logout.js"></script>
+</html>
