@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Usuarios - Biblioteca</title>
     <link rel="stylesheet" href="registros.css">
+    <link rel="stylesheet" href="../../Styles/sidebar.css">
 </head>
 <body>
 
@@ -35,28 +36,71 @@
             </div>
         </div>
 
-        <!-- BUSCADOR -->
-        <div class="buscador-container">
-            <input type="text" id="inputBuscarUsuario" placeholder="Buscar Usuario por nombre, correo o curso..." class="input-buscar">
+        <!-- PESTAÑAS -->
+        <div class="tabs" role="tablist">
+            <button type="button" class="tab active" id="tabUsuarios" role="tab" aria-selected="true" aria-controls="seccionUsuarios">👤 Usuarios</button>
+            <button type="button" class="tab" id="tabHistorial" role="tab" aria-selected="false" aria-controls="seccionHistorial">📜 Historial de préstamos</button>
         </div>
 
-        <!-- TABLA DE USUARIOS -->
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Correo</th>
-                        <th>Curso</th>
-                        <th>Rol</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="tablaUsuariosBody">
-                    <!-- Dinámico con JS -->
-                </tbody>
-            </table>
-        </div>
+        <!-- SECCIÓN USUARIOS -->
+        <section id="seccionUsuarios" role="tabpanel" aria-labelledby="tabUsuarios">
+            <div class="buscador-container">
+                <input type="text" id="inputBuscarUsuario" placeholder="Buscar Usuario por nombre, correo o curso..." class="input-buscar">
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Curso</th>
+                            <th>Rol</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaUsuariosBody">
+                        <!-- Dinámico con JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN HISTORIAL DE PRÉSTAMOS -->
+        <section id="seccionHistorial" role="tabpanel" aria-labelledby="tabHistorial" hidden>
+            <div class="resumen-historial" id="resumenHistorial">
+                <!-- Dinámico con JS -->
+            </div>
+
+            <div class="buscador-container filtros-historial">
+                <input type="text" id="inputBuscarHistorial" placeholder="Buscar por libro, usuario, correo o curso..." class="input-buscar">
+                <select id="selectEstadoHistorial" class="select-filtro" aria-label="Filtrar por estado">
+                    <option value="">Todos los estados</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Aprobado">Aprobado</option>
+                    <option value="Rechazado">Rechazado</option>
+                </select>
+                <button type="button" id="btnLimpiarFiltrosHistorial" class="boton-secundario">Limpiar filtros</button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Libro</th>
+                            <th>Usuario</th>
+                            <th>Curso</th>
+                            <th>Fecha préstamo</th>
+                            <th>Fecha regreso</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaHistorialBody">
+                        <!-- Dinámico con JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 </div>
 

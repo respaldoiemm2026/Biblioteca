@@ -17,49 +17,8 @@ body {
 }
 
 /* --- BARRA LATERAL (SIDEBAR) --- */
-.sidebar {
-    width: 260px;
-    background-color: #1e2b4d;
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.sidebar h2 {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #ecf0f1;
-}
-
 .link-menu {
     text-decoration: none;
-}
-
-.menu-item {
-    width: 100%;
-    padding: 12px 15px;
-    background-color: transparent;
-    border: none;
-    color: #bdc3c7;
-    text-align: left;
-    font-size: 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.menu-item:hover {
-    background-color: #34495e;
-    color: white;
-}
-
-.menu-item.active {
-    background-color: #1e2b4d;
-    color: white;
-    font-weight: bold;
 }
 
 /* --- CONTENIDO PRINCIPAL --- */

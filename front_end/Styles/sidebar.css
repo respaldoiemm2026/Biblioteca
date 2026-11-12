@@ -1,0 +1,58 @@
+/*
+ * Sidebar compartido del panel de administración.
+ * Se carga en todas las páginas del panel DESPUÉS de su CSS propio,
+ * así el menú lateral se ve igual en todas.
+ */
+
+.sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    background-color: #1e2b4d;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ecf0f1;
+}
+
+.sidebar .link-menu {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
+.sidebar .menu-item {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #bdc3c7;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.4;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar .menu-item:hover {
+    background-color: #34495e;
+    color: white;
+}
+
+.sidebar .menu-item.active {
+    background-color: #3b82f6;
+    color: white;
+    font-weight: bold;
+    cursor: default;
+}
